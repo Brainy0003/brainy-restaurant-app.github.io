@@ -257,19 +257,20 @@ nav h1 a {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list li a {
+#restaurants-list li button {
   background-color: #3397DB;
   /* background-color: orange; 
   border-bottom: 1px solid #eee; */
+  border: none;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
-  margin: 15px 0 0;
+  font-size: 1rem;
+  margin:15px auto; /*margin: 15px 0 0; */
   padding: 8px 30px 10px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width:87%;
+  width:100%;
   border-radius: 2px;
   box-shadow: 0 5px 15px 0 #3397DB;
   cursor: pointer;

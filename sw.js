@@ -30,17 +30,18 @@ self.addEventListener('install', event => {
           'data/restaurant.json',
           'css/styles.css',
      ]);
-
    })
-
  );
-
 });
 
 
 self.addEventListener('activate', event => {
 
- event.waitUntil(caches.keys().then(cacheNames => Promise.all(cacheNames.filter(cacheName => cacheName.startsWith('currency-converter-') && cacheName != staticCacheName).map(cacheName => caches['delete'](cacheName)))));
+ event.waitUntil(
+  caches.keys().then(cacheNames => Promise.all(cacheNames
+    .filter(cacheName => cacheName
+    .startsWith('restaurant-reviews-') && cacheName != staticCacheName)
+    .map(cacheName => caches['delete'](cacheName)))));
 
 });
 
@@ -54,7 +55,7 @@ self.addEventListener('fetch', event => {
 
   .then(response => response || fetch(event.request)
 
-.then(response => caches.open('currency-converter-v1')
+.then(response => caches.open('restaurant-reviews-v1')
 
     .then(cache => {
 

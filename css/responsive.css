@@ -1,30 +1,21 @@
 /* ====================== Responsive design pattern styles ====================== */
 @media screen and (max-width: 480px) {
-	body, html {
-        min-width: 100%;
-    }
+    body, html {min-width: 100%;padding: 0; overflow-x:hidden;}
     #maincontent {
         padding: 0;
         overflow: hidden;
      }  
-        header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .filter-icon {margin-top: 20px; }
     nav {
-        width: 100%;
-        height: 50px;
+        height: 80px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        padding: 1.5em;
+        padding: 2em;
     }
     nav h1 a {
-        font-size: 0.5em;
+        font-size: 1em;
     }
 	.filter-options {
     	width: 100%;
@@ -35,7 +26,8 @@
     	padding: 5px 0 5px;
     	height: auto;
     }
-    .filter-options h2, .filter-options select {margin:20px auto; }
+    
+    .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
 
     #restaurants-list  {
     	padding: 0;
@@ -45,6 +37,7 @@
         align-items: center;
         width: 100%;
     }
+    #restaurants-list li h1 {font-size: 1.3em; }
     #restaurants-list li {
         width: 70%;
         margin:30px auto;
@@ -69,15 +62,105 @@
 
 }
 
+@media screen and (min-width: 500px) {
+    #maincontent {padding: 0; overflow:hidden;}
+    nav {
+        width: 100%;
+        padding: 2rem;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    nav h1 a {font-size: 2.5rem;}
+    .filter-options {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em;
+        height: auto;
+    }
+    .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
+    #restaurants-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #restaurants-list li {
+        width: 50%;
+        margin:15px;
+    }
+}
 
-@media screen and (min-width: 800px) {
-  #maincontent {
-   /* width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 0px 10px #444;*/
-    box-shadow: 0 0 5px 5px rgba(0,0,0,.2);
-    width:97%;
-    margin: 0 auto;
-  }
+@media screen and (min-width: 700px) {
+    #maincontent {padding: 0; overflow:hidden;}
+    nav {
+        width: 100%;
+        padding: 2rem;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    nav h1 a {font-size: 2.5rem;}
+    .filter-options {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em;
+        height: auto;
+    }
+    .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
+    #restaurants-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #restaurants-list li {
+        width: 33%;
+        margin:15px 30px;
+    }
+}
+
+@media screen and (min-width: 800px) and (min-width: 1000px) {
+    #restaurants-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #restaurants-list li {
+        width: 33.33%;
+        margin:15px 20px;
+    }
+
+    #maincontent {
+        /* width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0px 0px 10px #444;*/
+        box-shadow: 0 0 5px 5px rgba(0,0,0,.2);
+        max-width:97%;
+        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden;
+    }
+}
+@media screen and (min-width: 1366px) {
+     #restaurants-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    #restaurants-list li {
+        width: 25%;
+        margin:5px 20px;
+    }
 }

@@ -68,6 +68,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  width: 100%;
+  height: auto;
 }
 
 nav {
@@ -196,6 +199,7 @@ nav h1 a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; */
+  width: 100%;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -246,7 +250,7 @@ nav h1 a {
 #restaurants-list li h1 {
   color: #3397DB; /*color: #f18200;*/
   font-family: Arial,sans-serif;
-  font-size: 14pt;
+  font-size: 1.5em;
   font-weight: 200;
   letter-spacing: 0;
   line-height: 1.3;

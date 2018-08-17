@@ -29,8 +29,6 @@ self.addEventListener('install', event => {
           'js/restaurant_info.js',
           'data/restaurant.json',
           'css/styles.css',
-         'https://free.currencyconverterapi.com/api/v5/currencies'
-
      ]);
 
    })

@@ -12,9 +12,10 @@
         justify-content: center;
         align-items: center;
     }
+    .filter-icon {margin-top: 20px; }
     nav {
         width: 100%;
-        height: 80px;
+        height: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -23,14 +24,19 @@
         padding: 20px;
     }
     nav h1 a {
-        font-size: 1em;
+        font-size: 0.5em;
     }
 	.filter-options {
     	width: 100%;
-    	display: block;
+    	display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     	padding: 5px 0 5px;
     	height: auto;
     }
+    .filter-options h2, .filter-options select {margin:20px auto; }
+
     #restaurants-list  {
     	padding: 0;
         display: flex;
@@ -40,26 +46,23 @@
         max-width: 100%;
     }
     #restaurants-list li {
-        background-color: #fff;
-        border: 2px solid #ccc;
-        font-family: Arial,sans-serif;
-        margin: 15px;
-        min-height: 380px;
-        padding: 0 30px 25px;
-        text-align: left;
-        width: 70%;
-        border-radius: 5px;
-        box-shadow: 0 0 5px 2px rgba(0,0,0,.2);
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin:30px auto;
     }
-
+    #restaurants-list  h2, #restaurants-list p {
+        float: left;
+    }
+    #restaurants-list a {
+        width:50%;
+    }
     #footer {
         background-color: #444;
         color: #aaa;
-        font-size: 8pt;
+        font-size: 0.8rem;
         letter-spacing: 1px;
         padding: 25px;
         display: flex;
@@ -71,89 +74,79 @@
     } 
 
 }
+
 @media screen and (max-width: 600px) {
- 	nav h1 a{
- 		width: 100%;
-		font-size: 0.7em;
+    nav {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    nav h1 a {
+        font-size: 0.5em;
+    }
+   .filter-options {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        flex-wrap: wrap;
-        flex-shrink: 1;
-	}
-    .filter-options {
-    	width: 100%;
-    	display: block;
-    	padding: 5px 0 5px;
-    	text-align: center;
+        padding: 5px 0 5px;
+        height: auto;
     }
-    .filter-options h2 {
-    	font-size: 1.3em;
+    .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
+
+    #restaurants-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content:space-between;
+    }
+   #restaurants-list li {
+        width: 50%;
+        height: auto;
+        min-height: 280px;
+    }
+    #restaurants-list  h2, #restaurants-list p {
+        text-align: left;
+    }
+    #restaurants-list a {
+        width:50%;
     }
 
 }
-
-@media screen and (min-width: 600px) {
-
-#reviews-list li {
-	margin: 0.5em;
-	width: calc((100% - 2 * (2em + 4px) - 2em) / 2);
-
- }  
-#maincontent {
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
-    max-width: 100%;
-   /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;*/
-
- }  
-#restaurant-container, 
-.inside #map-container {
-	width: calc((100% - 2em) / 2);
-
-}  
-.inside #map-container {
-	order: 1;
-	flex: 1 1 auto;
-	align-content: stretch;
-	height: 100%;
-	width: 100%;
-
-}  
-.inside #map {
-	justify-content: flex-start;
-	align-content: stretch;
-	align-items: stretch;
-    height: 100%;
-	width: 100%;
-
-}  
-
-
-#reviews-container {
-	order: 2;
-
+@media screen and (max-width: 800px) {
+    #restaurants-list li {width: 100%;}
+    nav h1 a {font-size: 1em;}
+      }
+   .filter-options {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px 0 5px;
+        height: auto;
+    }
+    .filter-options h2, .filter-options select {margin:20px auto; }
+    .filter-icon {margin-top: 20px;}
+    nav {height: 50px;}
+    nav h1 a {font-size: 1.2em;}
 }
 
-}
-@media screen and (min-width: 900px) {
-
-  #reviews-list li {
-    margin: 0.5em;
-    width: calc((100% - 3 * (2em + 4px) - 4em) / 3);
-  }
-}
-
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 800px) {
   #maincontent {
-    width: 1280px;
+   /* width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0px 0px 10px #444;
+    box-shadow: 0px 0px 10px #444;*/
+    box-shadow: 0 0 5px 5px rgba(0,0,0,.2);
+    width:97%;
+    margin: 0 auto;
   }
 }

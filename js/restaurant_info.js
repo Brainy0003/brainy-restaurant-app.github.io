@@ -101,10 +101,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   // the -small.jpg should be your own image name you have
   const smallImageSrc = image.src.replace('.jpg', '--small.jpg'); 
   // then you add a srcset attribute to the image
-
- image.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
- image.src = smallImageSrc;
- image.setAttribute('alt', 'image for ' + restaurant.name + ' Restaurant');
+  image.setAttribute('media', '(' + 'min-width:' + '750px' + ' 50%, ' + 'min-width:' + '320px' + ' 100%' + ')');
+  image.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
+  image.src = smallImageSrc;
+  image.setAttribute('alt', 'image for ' + restaurant.name + ' Restaurant');
 
 
   const cuisine = document.getElementById('restaurant-cuisine');

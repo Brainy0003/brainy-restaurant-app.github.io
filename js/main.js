@@ -181,10 +181,19 @@ createRestaurantHTML = (restaurant) => {
   const normalImageSrc = imageSrc.replace('.jpg', '--normal_1x.jpg');
   // the -small.jpg should be your own image name you have
   const smallImageSrc = imageSrc.replace('.jpg', '--small.jpg'); 
-  // then you create a source element
-  const source = document.createElement('source');
-  source.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
-  picture.append(source);
+  // then you create two source elements
+  const source1 = document.createElement('source');
+  source1.setAttribute('type', 'image/jpg');
+  source1.setAttribute('media','(' + 'min-width:' + '750px' + ')');
+  source1.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
+
+  const source2 = document.createElement('source');
+  source1.setAttribute('type', 'image/jpg');
+  source1.setAttribute('media','(' + 'min-width:' + '320px' + ')');
+  source1.setAttribute('srcset', normalImageSrc + ' 1x,' + largeImageSrc + ' 2x' );
+
+  picture.append(source1);
+  picture.append(source2);
   // then you create another img element and add tag and other attributes to it
   const image = document.createElement('img');
   image.className = 'restaurant-img';

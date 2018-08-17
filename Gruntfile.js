@@ -17,17 +17,17 @@ module.exports = function(grunt) {
             name: '-large',
             width: '100%',
             suffix: '_2x',
-            quality:50
+            quality:40
             },
             { name: '-normal', 
-            width: '50%', 
+            width: '30%', 
             suffix: '_1x', 
-            quality: 40 
+            quality: 25 
             }, 
             { name: '-small', 
             width: '25%', 
             suffix: '_small', 
-            quality: 30 
+            quality: 20 
           }]
         },
 

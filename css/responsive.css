@@ -12,7 +12,7 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        padding: 2em;
+        padding: 1em;
     }
     nav h1 a {
         font-size: 1em;
@@ -46,12 +46,29 @@
         margin: 0 auto;
         width:50%;
     }
+    #reviews-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #reviews-list li {
+        width: 90%;
+        height: auto;
+    }
+    #reviews-list li p:nth-child(1),
+    #reviews-list li p:nth-child(2) {
+      width: 100%;
+    }
+    #reviews-list li p:nth-child(3) {
+      width:30%;
+    }
+    #reviews-list li p {text-align: justify;}
     #footer {
-        background-color: #444;
-        color: #aaa;
         font-size: 0.8rem;
         letter-spacing: 1px;
-        padding: 25px;
+        padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -198,25 +198,36 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = smallImageSrc;
+  image.setAttribute('tabindex', 0);
   image.setAttribute('alt', 'image for ' + restaurant.name + ' Restaurant');
   picture.append(image);
 
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.setAttribute('tabindex', 0);
+  name.setAttribute('aria-label', `${restaurant.name}`);
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.setAttribute('tabindex', 0);
+  neighborhood.setAttribute('aria-label', `${restaurant.neighborhood}`);
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.setAttribute('tabindex', 0);
+  address.setAttribute('aria-label', `${restaurant.address}`);
   li.append(address);
 
   const more = document.createElement('button');
   more.setAttribute('type','button');
+  more.setAttribute('aria-label', 'click this to visit the restaurant review page');
+  // more.setAttribute('aria-label', 'view details');
   let anchorForMore = document.createElement('a');
+  anchorForMore.setAttribute('aria-label', 'view details button');
+  anchorForMore.setAttribute('role', 'button');
   anchorForMore.innerHTML = 'View Details';
   // more.href = DBHelper.urlForRestaurant(restaurant);
   anchorForMore.href = DBHelper.urlForRestaurant(restaurant);

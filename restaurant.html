@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +27,7 @@
       // Registration was successful
       console.log('Registration Worked!', reg.scope);
       }).catch(err => {
-      // registration failed :(
+      // registration failed 
       console.log('Registration failed!: ', err);
       });
     }
@@ -75,7 +74,17 @@
     <!-- End reviews -->
   </main>
   <!-- End main -->
-
+  <!-- Begining map button -->
+  <div id="map-btn" title="Show Map" class="map-btn-container"><i class="fa fa-map-marker map-btn" title="Show Map" tabindex="0"></i></div>
+  <script>
+    let mapBtn = document.querySelector('#map-btn');
+    mapBtn.addEventListener('click', showMap);
+    function showMap (){
+      map.style.display = "block";
+      map.classList.toggle('show-map');
+    }
+  </script>
+  <!-- end map button -->
   <!-- Beginning footer -->
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.

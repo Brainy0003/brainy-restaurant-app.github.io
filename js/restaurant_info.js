@@ -92,6 +92,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img'); 
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('tabindex', 0);
   // Here you will specify the different images for display
 
   // the -large_2x.jpg should be your own image name you have
@@ -101,7 +102,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   // the -small.jpg should be your own image name you have
   const smallImageSrc = image.src.replace('.jpg', '--small.jpg'); 
   // then you add a srcset attribute to the image
-  image.setAttribute('media', '(' + 'min-width:' + '750px' + ' 50%, ' + 'min-width:' + '320px' + ' 100%' + ')');
+  image.setAttribute('media', '(' + 'min-width:' + '750px' + ')');
   image.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
   image.src = smallImageSrc;
   image.setAttribute('alt', 'image for ' + restaurant.name + ' Restaurant');

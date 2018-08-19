@@ -10,9 +10,13 @@
         text-align:center;
         vertical-align:middle;
         line-height:2.2;
-        padding: 1em 0;
+        padding: 0.01em 0;
     }
     nav h1 a {font-size: 0.79em;}
+    #map {
+        height: 200px;
+        display: none;
+    }
     #breadcrumb li {font-size:1em;}
     .filter-options {
         width: 100%;
@@ -24,8 +28,9 @@
         height: auto;
     }
 
-    .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
-    .inside header nav {padding: 1em 0;}
+    .filter-icon, .filter-options h2, .filter-options select {margin:10px auto; }
+    .inside {padding: 0;margin: 0;overflow: hidden;max-width: 100%;}
+    .inside header nav {padding: 0.01em 0;}
     .inside header nav a {font-size: 0.79em;}
     #restaurants-list  {
         padding: 0;
@@ -61,7 +66,7 @@
       width: 100%;
     }
     #reviews-list li p:nth-child(3) {
-      width:30%;
+      width:33.33%;
     }
     #reviews-list li p {text-align: justify;}
     #restaurant-hours {overflow-x: auto;width: 100%;}
@@ -137,4 +142,9 @@
         /*width: calc((100% - 2 * (2em + 4px) - 2em) / 2);*/
         width:80%;
      }
+}
+
+@media screen and (min-width: 700px) {
+     #map-btn {display: none;}
+
 }

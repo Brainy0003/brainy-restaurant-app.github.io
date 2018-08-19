@@ -160,11 +160,38 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+/*
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
+*/
+
+  /**
+  * Create picture elements, and add source child elements to the html 
+  */
+  // create a picture element. This picture element will allow source tag for your image
+  const picture = document.createElement('picture');
+  li.append(picture);
+  // Here you will specify the different images for display
+  const imageSrc = DBHelper.imageUrlForRestaurant(restaurant);
+  // the -large_2x.jpg should be your own image name you have
+  const largeImageSrc = imageSrc.replace('.jpg', '--large_2x.jpg'); 
+  // the -normal_1x.jpg should be your own image name you have
+  const normalImageSrc = imageSrc.replace('.jpg', '--normal_1x.jpg');
+  // the -small.jpg should be your own image name you have
+  const smallImageSrc = imageSrc.replace('.jpg', '--small.jpg'); 
+  // then you create a source element
+  const source = document.createElement('source');
+  source.setAttribute('srcset', largeImageSrc + ' 2x,' + normalImageSrc + ' 1x');
+  picture.append(source);
+  // then you create another img element and add tag and other attributes to it
+  const image = document.createElement('img');
+  image.className = 'restaurant-img';
+  image.src = smallImageSrc;
+  image.setAttribute('alt', 'image for ' + restaurant.name + ' Restaurant');
+  picture.append(image);
+
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;

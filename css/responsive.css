@@ -5,18 +5,13 @@
         padding: 0;
         overflow: hidden;
      }
-    nav {
-        height: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 1em;
+   nav {
+        height: 50px;
+        text-align:center;
+        vertical-align:middle;
+        padding: 1em 0;
     }
-    nav h1 a {
-        font-size: 1em;
-    }
+    nav h1 a {font-size: 1em;}
     #breadcrumb li {font-size:1em;}
     .filter-options {
         width: 100%;
@@ -29,7 +24,8 @@
     }
 
     .filter-icon, .filter-options h2, .filter-options select {margin:20px auto; }
-
+    .inside header nav {padding: 1em 0;}
+    .inside header nav a {font-size: 1em;}
     #restaurants-list  {
         padding: 0;
         display: flex;
@@ -38,7 +34,7 @@
         align-items: center;
         width: 100%;
     }
-    #restaurants-list li h1 {font-size: 1.3em; }
+    #restaurants-list li h1 {font-size: 1em;font-weight: 700; }
     #restaurants-list li {
         width: 70%;
         margin:30px auto;

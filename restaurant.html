@@ -53,6 +53,22 @@
 
   <!-- Beginning main -->
   <main id="maincontent">
+    <!-- Begining map button -->
+    <div id="map-btn" title="Show Map" class="map-btn-container">
+      <i class="fa fa-map-marker map-btn" title="Show Map" tabindex="0"></i>
+    </div>
+    <script>
+      let mapBtn = document.querySelector('#map-btn');
+      mapBtn.addEventListener('click', showMap);
+      function showMap (){
+        /*if(map.classList.contains('hide-map')){
+          map.classList.replace('hide-map', 'show-map');
+        } else {map.replace('show-map', 'hide-map');}*/
+        // map.style.display = "block";
+        map.classList.toggle('show-map');
+      }
+    </script>
+    <!-- end map button -->
     <!-- Beginning map -->
     <section id="map-container">
       <div id="map"></div>
@@ -74,17 +90,7 @@
     <!-- End reviews -->
   </main>
   <!-- End main -->
-  <!-- Begining map button -->
-  <div id="map-btn" title="Show Map" class="map-btn-container"><i class="fa fa-map-marker map-btn" title="Show Map" tabindex="0"></i></div>
-  <script>
-    let mapBtn = document.querySelector('#map-btn');
-    mapBtn.addEventListener('click', showMap);
-    function showMap (){
-      map.style.display = "block";
-      map.classList.toggle('show-map');
-    }
-  </script>
-  <!-- end map button -->
+
   <!-- Beginning footer -->
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.

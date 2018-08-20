@@ -59,7 +59,7 @@
         width: 100%;
     }
     #reviews-list li {
-        width: 90%;
+        width: 100%;
         height: auto;
     }
     #reviews-list li p:nth-child(1),

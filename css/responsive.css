@@ -46,6 +46,7 @@
         margin:30px auto;
         height: auto;
     }
+    #restaurants-list li p:nth-child(4){font-size:0.8em;}
     #restaurants-list button {
         margin: 0 auto;
         width:50%;

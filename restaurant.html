@@ -57,7 +57,7 @@
     <div id="map-btn" title="Show Map" class="map-btn-container">
       <i class="fa fa-map-marker map-btn" title="Show Map" tabindex="0"></i>
     </div>
-        <script>
+       <script>
       let mapBtn = document.querySelector('#map-btn');
 
       mapBtn.addEventListener('click', showMap);
@@ -70,15 +70,11 @@
       }
 
       mapBtn.addEventListener('keydown', function showMapWithKeyboard (e){
-         if (e.defaultPrevented) {
-            return; // Should do nothing if the default action has been cancelled
-          }
         if(e.keyCode == 13){
           if(window.confirm('show / hide map')){
             map.classList.toggle('show-map');
           }
         }
-        e.preventDefault();
       });
     </script>
     <!-- end map button -->
@@ -89,11 +85,11 @@
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <h1 id="restaurant-name"     tabindex="0"></h1>
+      <img id="restaurant-img"     tabindex="0">
+      <p id="restaurant-cuisine"   tabindex="0"></p>
+      <p id="restaurant-address"   tabindex="0"></p>
+      <table id="restaurant-hours" tabindex="0" ></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->

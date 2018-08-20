@@ -222,17 +222,19 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('button');
+  let label = document.createElement('label');
+  label.append(more);
   more.setAttribute('type','button');
-  more.setAttribute('aria-label', 'click this to visit the restaurant review page');
+  more.setAttribute('aria-label', 'view details, click this to visit the restaurant review page');
   // more.setAttribute('aria-label', 'view details');
   let anchorForMore = document.createElement('a');
-  anchorForMore.setAttribute('aria-label', 'view details button');
-  anchorForMore.setAttribute('role', 'button');
+  // anchorForMore.setAttribute('aria-label', 'view details button');
+  anchorForMore.setAttribute('aria-hidden', 'true');
   anchorForMore.innerHTML = 'View Details';
   // more.href = DBHelper.urlForRestaurant(restaurant);
   anchorForMore.href = DBHelper.urlForRestaurant(restaurant);
   more.append(anchorForMore);
-  li.append(more)
+  li.append(label)
 
   return li
 }

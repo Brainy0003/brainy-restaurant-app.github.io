@@ -57,24 +57,20 @@
       }
 
       mapBtn.addEventListener('keydown', function showMapWithKeyboard (e){
-         if (e.defaultPrevented) {
-            return; // Should do nothing if the default action has been cancelled
-          }
         if(e.keyCode == 13){
           if(window.confirm('show / hide map')){
             map.classList.toggle('show-map');
           }
         }
-        e.preventDefault();
       });
     </script>
     <section id="map-container">
       <div id="map" aria-label="restaurant map" class="hide-map"></div>
     </section>
     <section>
-      <div class="filter-options" aria-label="Use these dropdowns to filter the search results for the restaurants">
+      <div class="filter-options" tabindex="0"  aria-label="Filter option tools bar, to filter the search results for the restaurants">
         <i tabindex="0" class="fa fa-filter filter-icon" aria-label="filter icon" style="color:white;font-size: 2rem;"></i>
-        <h2 tabindex="0" aria-label="Use these dropdowns to filter the search results for the restaurants">Filter Results</h2>
+        <h2 tabindex="0" aria-label="filter results">Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>

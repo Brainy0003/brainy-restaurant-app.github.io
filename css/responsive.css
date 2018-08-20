@@ -67,7 +67,7 @@
       width: 100%;
     }
     #reviews-list li p:nth-child(3) {
-      width:33.33%;
+      width:40.33%;
     }
     #reviews-list li p {text-align: justify;}
     #restaurant-hours {overflow-x: auto;width: 100%;}

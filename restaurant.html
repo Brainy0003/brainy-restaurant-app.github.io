@@ -21,7 +21,7 @@
   <!-- javascript files -->
   <script src="./idb.js"></script>
   <script>
-      // Register the service worker
+    // Register the service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then((reg) => {
       // Registration was successful
@@ -57,8 +57,9 @@
     <div id="map-btn" title="Show Map" class="map-btn-container">
       <i class="fa fa-map-marker map-btn" title="Show Map" tabindex="0"></i>
     </div>
-    <script>
+        <script>
       let mapBtn = document.querySelector('#map-btn');
+
       mapBtn.addEventListener('click', showMap);
       function showMap (){
         /*if(map.classList.contains('hide-map')){
@@ -67,6 +68,18 @@
         // map.style.display = "block";
         map.classList.toggle('show-map');
       }
+
+      mapBtn.addEventListener('keydown', function showMapWithKeyboard (e){
+         if (e.defaultPrevented) {
+            return; // Should do nothing if the default action has been cancelled
+          }
+        if(e.keyCode == 13){
+          if(window.confirm('show / hide map')){
+            map.classList.toggle('show-map');
+          }
+        }
+        e.preventDefault();
+      });
     </script>
     <!-- end map button -->
     <!-- Beginning map -->

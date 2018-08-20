@@ -21,15 +21,15 @@
   <script type="text/javascript">
       // Register the service worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').then((reg) => {
+      navigator.serviceWorker.register('./sw.js').then((reg) => {
       // Registration was successful
-      console.log('Registration Worked!', reg.scope);
+      window.alert('Registration Worked!', reg.scope);
       }).catch(err => {
       // registration failed :(
-      console.log('Registration failed!: ', err);
+      window.alert('Registration failed!: ', err);
       });
     }
-    </script>
+  </script>
 
 </head>
 
@@ -46,6 +46,7 @@
     </div>
     <script>
       let mapBtn = document.querySelector('#map-btn');
+
       mapBtn.addEventListener('click', showMap);
       function showMap (){
         /*if(map.classList.contains('hide-map')){
@@ -54,6 +55,18 @@
         // map.style.display = "block";
         map.classList.toggle('show-map');
       }
+
+      mapBtn.addEventListener('keydown', function showMapWithKeyboard (e){
+         if (e.defaultPrevented) {
+            return; // Should do nothing if the default action has been cancelled
+          }
+        if(e.keyCode == 13){
+          if(window.confirm('show / hide map')){
+            map.classList.toggle('show-map');
+          }
+        }
+        e.preventDefault();
+      });
     </script>
     <section id="map-container">
       <div id="map" aria-label="restaurant map" class="hide-map"></div>

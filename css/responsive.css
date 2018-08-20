@@ -9,6 +9,7 @@
         height: 50px;
         text-align:center;
         vertical-align:middle;
+        line-height:2.2;
         padding: 1em 0;
     }
     nav h1 a {font-size: 1em;}

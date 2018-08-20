@@ -14,7 +14,7 @@
     }
     nav h1 a {font-size: 0.79em;}
     #map {
-        height: 200px;
+        height: 300px;
         display: none;
     }
     #breadcrumb li {font-size:1em;}
@@ -42,7 +42,7 @@
     }
     #restaurants-list li h1 {font-size: 1em;font-weight: 700; }
     #restaurants-list li {
-        width: 70%;
+        width: 85%;
         margin:30px auto;
         height: auto;
     }

@@ -1,3 +1,25 @@
+// Register the service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then((reg) => {
+
+    if (reg.waiting) {
+
+      //console.log("sw is skipping waiting");
+      self.skipWaiting();
+        
+      return;
+      }
+
+
+  // Registration was successful
+  console.log('Registration Worked!', reg.scope);
+}).catch(err => {
+  // registration failed :(
+  console.log('Registration failed!: ', err);
+  });
+}
+
+
 let restaurant;
 var newMap;
 
@@ -147,7 +169,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.setAttribute('tabindex', 0);
   title.innerHTML = 'Reviews';
   container.appendChild(title);
@@ -200,6 +222,7 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  li.setAttribute('aria-current', 'page');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }

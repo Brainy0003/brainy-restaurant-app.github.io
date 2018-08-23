@@ -20,7 +20,7 @@
 
   <!-- javascript files -->
   <script src="./idb.js"></script>
-  <script>
+  <!--<script>
     // Register the service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then((reg) => {
@@ -32,7 +32,7 @@
       });
     }
     </script>
-
+  -->
 </head>
 
 <body class="inside">
@@ -43,9 +43,11 @@
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
+    <nav aria-label="Breadcrumb">
+      <ul id="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -80,12 +82,12 @@
     <!-- end map button -->
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div tabindex="0" id="map" role="application" aria-label="Map with restaurants" class="hide-map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"     tabindex="0"></h1>
+      <h2 id="restaurant-name"     tabindex="0"></h2>
       <img id="restaurant-img"     tabindex="0">
       <p id="restaurant-cuisine"   tabindex="0"></p>
       <p id="restaurant-address"   tabindex="0"></p>

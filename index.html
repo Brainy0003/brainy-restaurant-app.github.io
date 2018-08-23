@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
 
   <!-- javascript files -->
   <script type="text/javascript" src="./idb.js"></script>
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
       // Register the service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').then((reg) => {
@@ -30,13 +30,15 @@
       });
     }
   </script>
-
+-->
 </head>
 
 <body>
   <header>
     <nav>
-      <h1 aria-label="restaurant reviews"><a aria-label="restaurant reviews" href="/">Restaurant Reviews</a></h1>
+      <h1 aria-label="restaurant reviews">
+        <a aria-label="restaurant reviews" href="/">Restaurant Reviews</a>
+      </h1>
     </nav>
   </header>
 
@@ -65,7 +67,7 @@
       });
     </script>
     <section id="map-container">
-      <div id="map" aria-label="restaurant map" class="hide-map"></div>
+      <div tabindex="0" id="map" role="application" aria-label="Map with restaurants" class="hide-map"></div>
     </section>
     <section>
       <div class="filter-options" tabindex="0"  aria-label="Filter option tools bar, to filter the search results for the restaurants">

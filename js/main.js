@@ -1,3 +1,25 @@
+// Register the service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then((reg) => {
+
+    if (reg.waiting) {
+
+      //console.log("sw is skipping waiting");
+      self.skipWaiting();
+        
+      return;
+      }
+
+
+  // Registration was successful
+  console.log('Registration Worked!', reg.scope);
+}).catch(err => {
+  // registration failed :(
+  console.log('Registration failed!: ', err);
+  });
+}
+
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -203,7 +225,7 @@ createRestaurantHTML = (restaurant) => {
   picture.append(image);
 
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   name.setAttribute('tabindex', 0);
   name.setAttribute('aria-label', `${restaurant.name}`);
@@ -222,10 +244,8 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('button');
-  let label = document.createElement('label');
-  label.append(more);
   more.setAttribute('type','button');
-  more.setAttribute('aria-label', 'view details, click this to visit the restaurant review page');
+  more.setAttribute('aria-label', `view details, click this to visit ${name.innerHTML} restaurant review page, note press tab once and hit enter to visit ${name.innerHTML} review page`);
   // more.setAttribute('aria-label', 'view details');
   let anchorForMore = document.createElement('a');
   // anchorForMore.setAttribute('aria-label', 'view details button');
@@ -234,7 +254,7 @@ createRestaurantHTML = (restaurant) => {
   // more.href = DBHelper.urlForRestaurant(restaurant);
   anchorForMore.href = DBHelper.urlForRestaurant(restaurant);
   more.append(anchorForMore);
-  li.append(label)
+  li.append(more)
 
   return li
 }
@@ -266,14 +286,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 */
-// Register the service worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').then((reg) => {
-  // Registration was successful
-  console.log('Registration Worked!', reg.scope);
-}).catch(err => {
-  // registration failed :(
-  console.log('Registration failed!: ', err);
-  });
-}
+
 

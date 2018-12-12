@@ -50,5 +50,5 @@
 
 
 ## Url To The Application:
-[Restaurant Review Application](https://brainy0003.github.io/brainy-restaurant-app.github.io)
+[Restaurant Review Application](https://precious-adeyinka.github.io/brainy-restaurant-app.github.io)
 ## Created By Precious Adeyinka... :)
